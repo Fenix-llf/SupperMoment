@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 #include <filesystem>
-#include "include/SystemConfig.h"
+#include "SystemConfig.h"
 
 std::vector<std::string> paths = {
     "/etc/SupperMoment",
