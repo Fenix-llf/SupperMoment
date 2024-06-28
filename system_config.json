@@ -1,0 +1,95 @@
+{   
+    "system_config" : {
+        "board_name": "ZPC-101Q55RTW-01",
+        "board_version": "Rev.A",
+        "auto_test": "true",
+        "circle": "true",
+        "mode" : "website", 
+        "website_port" : "12345",
+        "display_mode": "awtk",
+        "cpu_freq_path" : "temp_test",
+        "cpu_temp_path" : "temp_test",
+        "npu_temp_path" : "temp_test" 
+    },
+    "modules": [
+        
+        {
+            "type" : "net",
+            "parameters": {
+                "name" : "NETPC",
+                "iface" : "enx0826ae379afc",
+                "ip" : "192.168.1.168",
+                "dest" : "192.168.2.136",
+                "timeout" : 4,
+                "count" : 3
+            }
+        },
+        {
+            "type" : "serial",
+            "parameters": {
+                "name" : "RS485-0-1",
+                "test_mode": "pair",
+                "port" : "/dev/ttyS3",
+                "pair_port" : "/dev/ttyS4",
+                "pair_mode" : 0,
+                "baudrate" : "115200",
+                "bytesize" : 8,
+                "parity" : 0,
+                "stopbits" : 1,
+                "timeout" : 1,
+                "flow_control" : "none",
+                "test_text": "zlgzlg"
+            }
+        },
+        {
+            "type":"wifi",
+            "parameters" : {
+                "name" : "wifi",
+                "iface":"wlan0",
+                "mode":"ap",
+                "ap_name":"zpc3568",
+                "password":"12345678"
+            }
+        },
+        {
+            "type":"gpio",
+            "parameters" : {
+                 "name" : "DI0",
+                 "id": "GPIO3_B0",
+                 "num": 104,
+                 "direction": "input",
+                 "mode" : "trigger"
+            }
+        },
+        {
+            "type":"gpio",
+            "parameters" : {
+                 "name" : "DI1",
+                 "id": "GPIO3_D4",
+                 "num": 124,
+                 "direction": "input",
+                 "mode" : "trigger"
+            }
+        },
+        {
+            "type":"gpio",
+            "parameters" : {
+                 "name" : "RELAY1",
+                 "id": "GPIO3_D5",
+                 "num": 125,
+                 "direction": "output",
+                 "mode" : "trigger"
+            }
+        },
+        {
+            "type":"gpio",
+            "parameters" : {
+                 "name" : "RELAY0",
+                 "id": "GPIO4_D2",
+                 "num": 154,
+                 "direction": "output",
+                 "mode" : "trigger"
+            }
+        }
+    ]
+}
